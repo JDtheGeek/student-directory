@@ -1,13 +1,14 @@
 # Methods
 def print_menu
   puts ""
-  puts "==Menu==================="
-  puts "1. Input the students"
-  puts "2. Show the students"
-  puts "3. Save the list to students.csv"
-  puts "----"
-  puts "9. Exit"
-  puts "========================="
+  puts "==Menu==============================="
+  puts "  1. Input the students"
+  puts "  2. Show the students"
+  puts "  3. Save the list to students.csv"
+  puts "  4. Load students.csv"
+  puts "  ----"
+  puts "  9. Exit"
+  puts "====================================="
 end
 
 def show_students
@@ -29,6 +30,8 @@ def interactive_menu
       show_students
     when "3"
       save_students
+    when "4"
+      load_students
     when "9"
       exit # terminate the program
     else
@@ -82,6 +85,15 @@ def save_students
   end
   file.close
 end 
+
+def load_students
+  file = File.open("students.csv", "r")
+  file.readlines.each do |line|
+    name, cohort = line.chomp.split(",")
+    @students << {name: name, cohort: cohort.to_sym}
+  end
+  file.close
+end
 
 # Method calls
 interactive_menu
