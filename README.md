@@ -1,5 +1,5 @@
 # Student Directory #
-A scrpit for managing the students enrolled at Villians Acadamy
+A script for managing the students enrolled at Villians Acadamy
 
 ## Using the Student Directory ##
 
