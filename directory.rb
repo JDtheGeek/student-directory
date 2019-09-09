@@ -15,10 +15,39 @@ students = [
 
 # Methods
 def interactive_menu
-  # 1. print menu and ask for user input
-  # 2. store the input
-  # 3. do task as per user input
-  # 4. repeat from 1.
+  students = []
+  loop do
+    # 1. print menu and ask for user input
+    puts ""
+    puts "==Menu==================="
+    puts "1. Input the students"
+    puts "2. Show the students"
+    puts "----"
+    puts "9. Exit"
+    puts "========================="
+    
+    # 2. store the input
+    selection = gets.chomp
+
+    # 3. do task as per user input
+    case selection
+    when "1"
+      # input the students
+      students = input_students
+    
+    when "2"
+      # show the students
+      print_header
+      print(students)
+      print_footer(students)
+
+    when "9"
+      exit # terminate the program
+    
+    else
+      puts "That is not one of the options. Please select again."
+    end
+  end
 end
 
 
@@ -61,9 +90,4 @@ def print_footer(names)
 end
 
 # Method calls
-students = input_students
-print_header
-print(students)
-print_footer(students)
-
-
+interactive_menu
