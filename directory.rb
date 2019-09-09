@@ -14,6 +14,14 @@ students = [
 ]
 
 # Methods
+def interactive_menu
+  # 1. print menu and ask for user input
+  # 2. store the input
+  # 3. do task as per user input
+  # 4. repeat from 1.
+end
+
+
 def input_students
   puts "Please enter the names of the students"
   puts "To finish, just hit return twice"
